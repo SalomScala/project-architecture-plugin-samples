@@ -1,7 +1,7 @@
 
 buildscript {
     repositories {
-        flatDir dirs: "../../gradle-project-architecture-plugin/build/libs"
+        flatDir dirs: "../../project-architecture-plugin/build/libs"
     }
     dependencies {
         classpath "project-architecture:project-architecture-description-plugin:0.1"
