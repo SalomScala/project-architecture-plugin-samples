@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':ADomainPersistence')
+    compile project(':BDomainService')
+    //compile project(':BDomainGui')
+}

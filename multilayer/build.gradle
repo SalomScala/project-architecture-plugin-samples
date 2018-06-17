@@ -1,0 +1,42 @@
+
+buildscript {
+    repositories {
+        flatDir dirs: "../../gradle-project-architecture-plugin/build/libs"
+    }
+    dependencies {
+        classpath "project-architecture:project-architecture-description-plugin:0.1"
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'projectarchitecture'
+    
+    projectArchitectureDescription {
+        dimensions {
+            dimension('Gui') {
+                projectCondition {
+                    return it.name.endsWith("Gui");
+                }
+            }
+            dimension('Service') {
+                projectCondition {
+                    return it.name.endsWith("Service");
+                }
+            }
+            dimension('Persistence') {
+                projectCondition {
+                    return it.name.endsWith("Persistence");
+                }
+            }
+        }
+        rules {
+            forbidAllDimensions()
+            allowDimensions('Gui', 'Service')
+            allowDimensions('Service', 'Persistence')
+            //forbidDimensions('Persistence', 'Service')
+            //forbidDimensions('Persistence', 'Gui')
+            //forbidDimensions('Service', 'Gui')       
+        }
+    }
+}
