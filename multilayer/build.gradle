@@ -4,13 +4,13 @@ buildscript {
         flatDir dirs: "../../project-architecture-plugin/build/libs"
     }
     dependencies {
-        classpath "project-architecture:project-architecture-description-plugin:0.1"
+        classpath "project-architecture-plugin:project-architecture-description-plugin:0.2"
     }
 }
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'projectarchitecture'
+    apply plugin: 'projectarchitectureplugin'
     
     projectArchitectureDescription {
         dimensions {
