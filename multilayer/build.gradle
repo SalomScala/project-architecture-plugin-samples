@@ -4,7 +4,7 @@ buildscript {
         flatDir dirs: "../../project-architecture-plugin/build/libs"
     }
     dependencies {
-        classpath "project-architecture-plugin:project-architecture-description-plugin:0.2"
+        classpath "project-architecture-plugin:project-architecture-plugin:0.2"
     }
 }
 
@@ -31,11 +31,11 @@ subprojects {
             }
         }
         rules {
-            forbidAllDimensions()
-            allowDimensions('Gui', 'Service')
-            allowDimensions('Service', 'Persistence')
+            //forbidAllDimensions()
+            //allowDimensions('Gui', 'Service')
+            //allowDimensions('Service', 'Persistence')
             //forbidDimensions('Persistence', 'Service')
-            //forbidDimensions('Persistence', 'Gui')
+            forbidDimension('Persistence', 'Gui')
             //forbidDimensions('Service', 'Gui')       
         }
     }

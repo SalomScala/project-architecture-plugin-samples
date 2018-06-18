@@ -1,1 +1,6 @@
-include 'ADomainGui', 'ADomainService', 'ADomainPersistence', 'BDomainGui', 'BDomainService', 'BDomainPersistence'
+include 'ADomainGui',
+ 'ADomainService',
+ 'ADomainPersistence',
+ 'BDomainGui',
+ 'BDomainService', 
+ 'BDomainPersistence'
